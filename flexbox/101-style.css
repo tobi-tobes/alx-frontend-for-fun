@@ -1,0 +1,82 @@
+:root {
+    --small-font: 1.2rem;
+    --medium-font: 2rem;
+    --large-font: 3.5rem;
+    --small-box-size: 4rem;
+    --medium-box-size: 5rem;
+    --large-box-size: 7rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 10rem;
+}
+
+.box {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.box1 {
+    background-color: red;
+}
+
+.box2 {
+    background-color: orange;
+}
+
+.box3 {
+    background-color: violet;
+    height: var(--large-box-size);
+    width: calc(1.5 * var(--large-box-size));
+    z-index: 3;
+    font-size: var(--large-font);
+    align-items: center;
+}
+
+.box4 {
+    background-color: green;
+}
+
+.box5 {
+    background-color: blue;
+}
+
+.box1, .box5 {
+    height: var(--small-box-size);
+    width: var(--small-box-size);
+    z-index: 1;
+    font-size: var(--small-font);
+}
+
+.box2, .box4 {
+    height: var(--medium-box-size);
+    width: calc(1.3 * var(--medium-box-size));
+    z-index: 2;
+    font-size: var(--medium-font);
+}
+
+.box1::after, .box5::after {
+    content: "";
+    display: block;
+    clear: both;
+    background-color: white;
+    height: 15px;
+    width: calc(1.5 * var(--small-box-size));
+    align-self: flex-end;
+}
+
+.box2::after, .box4::after {
+    content: "";
+    display: block;
+    clear: both;
+    background-color: white;
+    height: 10px;
+    width: calc(1.5 * var(--medium-box-size));
+    align-self: flex-end;
+}
