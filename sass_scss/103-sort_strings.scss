@@ -1,0 +1,32 @@
+/* My style */
+
+@import '103-sort_list';
+
+@function swap($list, $index1, $index2) {
+    $temp1: nth($list, $index1);
+    $temp2: nth($list, $index2);
+    $list: set-nth($list, $index1, $temp2);
+    $list: set-nth($list, $index2, $temp1);
+    @return $list;
+}
+
+@function bubble-sort($list) {
+    $len: length($list);
+    
+    @for $i from 1 through $len {
+      @for $j from 1 through ($len - $i) {
+        $current: nth($list, $j);
+        $next: nth($list, $j + 1);
+        
+        @if $current > $next {
+          $list: swap($list, $j, $j + 1);
+        }
+      }
+    }
+    
+    @return $list;
+}
+
+$sorted-list: bubble-sort($list_to_sort);
+
+@debug $sorted-list;
