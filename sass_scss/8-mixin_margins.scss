@@ -1,17 +1,13 @@
 /* My style */
 
 @mixin body-margin {
-    margin {
-        left: 10px;
-        right: 10px;
-    }
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 @mixin div-margin {
-    margin {
-        left: 15px;
-        right: 15px;
-    }
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 body {
